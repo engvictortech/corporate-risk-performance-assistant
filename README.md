@@ -1,152 +1,179 @@
-📊 Análise e Previsão de Inadimplência
-Projeto de Dados com foco em Fintech e Risco de Crédito
-🎯 Contexto de Negócio
+# 📊 Análise e Previsão de Inadimplência
 
-Instituições financeiras operam sob risco constante de inadimplência. Antecipar movimentos de deterioração do crédito é essencial para:
+### Projeto de Data Science aplicado a **Risco de Crédito em Fintech**
 
-Reduzir perdas financeiras
+---
 
-Ajustar políticas de concessão
+## 🎯 Visão Executiva
 
-Melhorar provisionamento
+Este projeto simula um cenário real de uma **fintech de crédito** que precisa antecipar movimentos de deterioração da carteira.
 
-Tomar decisões estratégicas baseadas em dados
+O objetivo é transformar **dados macroeconômicos** em **insights estratégicos acionáveis**, permitindo decisões como:
 
-Este projeto simula um cenário real de análise de risco em fintech, utilizando variáveis macroeconômicas para prever variações na inadimplência.
+* Ajuste de políticas de concessão
+* Revisão de limites de crédito
+* Reprecificação de taxas
+* Reforço de provisionamento
 
-🧠 Problema
+A proposta vai além da análise técnica — o foco está em **impacto no negócio**.
 
-Como fatores macroeconômicos (juros e desemprego) influenciam a inadimplência?
-É possível antecipar movimentos de alta no risco de crédito?
+---
 
-📂 Estrutura do Projeto
+## 🧠 Problema de Negócio
 
+Instituições financeiras operam sob risco constante de inadimplência.
+Movimentos macroeconômicos, como aumento do desemprego ou da taxa de juros, podem afetar diretamente a qualidade da carteira.
+
+**Pergunta central:**
+
+> É possível antecipar movimentos de alta na inadimplência utilizando variáveis macroeconômicas?
+
+---
+
+## 📂 Estrutura do Projeto
+
+```
 📁 data/
-    ├── raw/
-    └── processed/
+
+├── raw/
+
+└── processed/
 
 📁 notebooks/
-    ├── 01_coleta_dados.ipynb
-    ├── 02_tratamento_dados.ipynb
-    ├── 03_analise_exploratoria.ipynb
-    ├── 04_modelagem_preditiva.ipynb
+
+├── 01_coleta_dados.ipynb
+
+├── 02_tratamento_dados.ipynb
+
+├── 03_analise_exploratoria.ipynb
+
+├── 04_modelagem_preditiva.ipynb
 
 📁 outputs/
-    ├── graficos/
-    └── metricas/
+
+├── graficos/
+
+└── metricas/
 
 README.md
 requirements.txt
+```
 
-🔎 Etapas do Projeto
-1️⃣ Coleta de Dados
+---
 
-Taxa de inadimplência
+## 🔎 Abordagem Analítica
 
-Taxa de juros
+### 1️⃣ Coleta de Dados
 
-Taxa de desemprego
+* Taxa de inadimplência
+* Taxa de juros
+* Taxa de desemprego
+* Série temporal estruturada por período
 
-Série temporal organizada por período
+---
 
-2️⃣ Tratamento e Preparação
+### 2️⃣ Tratamento e Engenharia de Dados
 
-Conversão e padronização de datas
+* Padronização temporal
+* Tratamento de valores ausentes
+* Organização cronológica
+* Criação de variáveis explicativas
 
-Tratamento de valores ausentes
+Aplicação de boas práticas para manter consistência e evitar vazamento de dados.
 
-Organização temporal
+---
 
-Engenharia básica de variáveis
+### 3️⃣ Análise Exploratória (EDA)
 
-3️⃣ Análise Exploratória (EDA)
+Principais análises realizadas:
 
-Principais análises:
+* Evolução histórica da inadimplência
+* Correlação entre desemprego e inadimplência
+* Impacto da taxa de juros
+* Identificação de tendências e ciclos
 
-Evolução histórica da inadimplência
+📌 **Insight Estratégico:**
+O desemprego apresenta forte relação positiva com a inadimplência, enquanto juros indicam possível impacto com efeito defasado.
 
-Correlação entre desemprego e inadimplência
+Isso reforça a importância de monitoramento macroeconômico na gestão de risco.
 
-Correlação entre juros e inadimplência
+---
 
-Identificação de tendências e ciclos
+### 4️⃣ Modelagem Preditiva
 
-📌 Insight principal:
-O desemprego apresenta forte relação positiva com a inadimplência, enquanto a taxa de juros demonstra impacto com possível efeito defasado.
+Modelo desenvolvido respeitando a ordem temporal dos dados.
 
-4️⃣ Modelagem Preditiva
+Boas práticas aplicadas:
 
-Foi aplicada modelagem respeitando a ordem temporal dos dados.
+* Separação treino/teste cronológica
+* Avaliação por métricas de erro
+* Comparação entre valores reais e previstos
 
-Boas práticas utilizadas:
+🎯 **Objetivo:**
+Antecipar movimentos de alta no risco de crédito para suportar decisões estratégicas.
 
-Separação treino/teste cronológica
+---
 
-Avaliação por métricas de erro
+## 📊 Resultados Relevantes
 
-Comparação entre valores reais e previstos
+✔ Captura consistente da tendência de crescimento da inadimplência
+✔ Evidência de poder explicativo das variáveis macroeconômicas
+✔ Aplicabilidade direta em contexto de fintech
 
-Objetivo do modelo:
-Antecipar movimentos de alta no risco de crédito.
+O projeto demonstra como transformar variáveis econômicas em sinal preditivo para gestão de risco.
 
-📊 Resultados Estratégicos
+---
 
-✔ O modelo conseguiu capturar tendência de crescimento da inadimplência
-✔ Variáveis macroeconômicas demonstraram poder explicativo relevante
-✔ O projeto simula aplicação prática em contexto de fintech
+## 🛠 Stack Tecnológica
 
-🛠️ Stack Tecnológica
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Scikit-Learn
 
-Python
+---
 
-Pandas
+## 💼 Aplicação em Ambiente Real
 
-NumPy
+Em uma fintech ou banco digital, este modelo pode apoiar:
 
-Matplotlib
+* Ajuste de score de crédito
+* Segmentação de clientes por risco
+* Revisão de política de concessão
+* Definição de limites
+* Estratégia de precificação
 
-Scikit-Learn
+---
 
-💼 Aplicação no Mundo Real
+## 🚀 Próximos Passos (Roadmap Técnico)
 
-Em um cenário real de fintech, essa análise pode ser usada para:
+* Implementação de modelo de classificação (inadimplente vs adimplente)
+* Regressão Logística
+* Random Forest
+* Avaliação com ROC-AUC e Recall
+* Backtesting de performance
+* Construção de dashboard executivo
 
-Ajuste de score de crédito
+---
 
-Definição de política de concessão
+## 👤 Autor
 
-Aumento ou redução de limites
-
-Ajuste de taxa de juros por perfil de risco
-
-🚀 Próximas Evoluções
-
-Implementação de modelo de classificação (inadimplente vs adimplente)
-
-Regressão Logística
-
-Random Forest
-
-Avaliação com ROC-AUC e Recall
-
-Construção de dashboard executivo
-
-👤 Autor
-
-Victor Hugo Miranda Crispim
+**Victor Hugo Miranda Crispim**
 Bacharel em Análise de Dados
 Experiência em Crédito B2B e B2C
 Foco em análise de risco e tomada de decisão baseada em dados
 
-📌 Diferencial do Projeto
+---
 
-Este projeto une:
+## ⭐ Diferencial
 
-📊 Análise estatística
+Este projeto integra:
 
-🤖 Modelagem preditiva
+* Análise estatística
+* Modelagem preditiva
+* Visão estratégica de crédito
+* Interpretação orientada a negócio
 
-🏦 Visão de negócio em crédito
-
-📈 Interpretação estratégica dos dados
+Mais do que um exercício técnico, é uma simulação prática de gestão de risco em fintech.
 
