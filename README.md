@@ -160,9 +160,12 @@ Em uma fintech ou banco digital, este modelo pode apoiar:
 ## 👤 Autor
 
 **Victor Hugo Miranda Crispim**
-Bacharel em Análise de Dados
-Experiência em Crédito B2B e B2C
-Foco em análise de risco e tomada de decisão baseada em dados
+
+* Bacharel em Análise de Dados
+
+* Experiência em Crédito B2B e B2C
+
+* Foco em análise de risco e tomada de decisão baseada em dados
 
 ---
 
