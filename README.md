@@ -30,34 +30,40 @@ inadimplente	          Indicador de inadimplência (0 = não, 1 = sim) ❌
 Exemplo de dados:
 
 cliente_id,receita,risco,segmento,tempo_contrato_meses,inadimplente
+
 1,10000,baixo,corporativo,24,0
+
 2,20000,medio,corporativo,36,0
+
 3,,alto,pm e,12,1
+
 ...
+
 20,7000,alto,pm e,9,1
 
 ## 🔹 Estrutura do Projeto
 project-root/
 │
+
 ├── data/
 
-│   └── sample_data.csv           # 📄 Dados de clientes
+│   └── sample_data.csv                📄 **Dados de clientes**
 
 │
 
 ├── src/
 
-│   ├── data_loader.py            # 🧹 Carregamento e limpeza de dados
+│   ├── data_loader.py                                 🧹 **Carregamento e limpeza de dados**
 
-│   ├── performance_analyzer.py   # 📊 KPIs e insights estratégicos
+│   ├── performance_analyzer.py        📊 **KPIs e insights estratégicos**
 
-│   ├── risk_scoring.py           # 🚨 Score e classificação de risco
+│   ├── risk_scoring.py                🚨 **Score e classificação de risco**
 
-│   └── visualizer.py             # 📈 Visualizações (receita, score, etc.)
+│   └── visualizer.py                  📈 **Visualizações (receita, score, etc.)**
 
 │
 
-├── main.py                       # ▶️ Script principal
+├── main.py                            ▶️ **Script principal**
 
 └── README.md
 
@@ -151,7 +157,7 @@ Você pode:
 
 📊 Expandir KPIs e visualizações
 
-🔹 Autor
+# 🔹 Autor
 * Victor Hugo Miranda Crispim
 
 * Bacharel em Análise de Dados
