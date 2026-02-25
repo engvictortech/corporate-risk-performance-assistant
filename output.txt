@@ -1,0 +1,60 @@
+📥 Carregando dados...
+✅ Dados carregados com sucesso!
+🔎 Validando estrutura dos dados...
+📊 Linhas: 20
+📊 Colunas: 6
+✅ Validação concluída!
+🧹 Tratando valores nulos...
+✅ Dados tratados com sucesso!
+
+📊 KPIs EXECUTIVOS
+----------------------------------------
+Receita Total: 361000.0
+Receita Média: 22562.5
+Taxa de Inadimplência (%): 18.75
+Tempo Médio de Contrato: 34.0625
+Clientes Risco Alto (%): 18.75
+
+📈 Receita Média por Segmento
+----------------------------------------
+segmento
+corporativo    18285.714286
+enterprise     41750.000000
+pm e           13200.000000
+Name: receita, dtype: float64
+
+🧠 INSIGHTS ESTRATÉGICOS
+----------------------------------------
+📉 Segmento PME apresenta maior risco de inadimplência.
+💰 Receita média saudável acima de 20k.
+
+🚨 RISK SCORING ENGINE
+----------------------------------------
+    cliente_id  score categoria_risco
+0            1     45     BAIXO RISCO
+1            2     40     BAIXO RISCO
+3            4     25     BAIXO RISCO
+4            5     40     BAIXO RISCO
+6            7     25     BAIXO RISCO
+7            8    100      ALTO RISCO
+8            9     40     BAIXO RISCO
+9           10     60     RISCO MÉDIO
+10          11     25     BAIXO RISCO
+12          13     40     BAIXO RISCO
+13          14    100      ALTO RISCO
+14          15     25     BAIXO RISCO
+15          16     40     BAIXO RISCO
+17          18     25     BAIXO RISCO
+18          19     40     BAIXO RISCO
+19          20    100      ALTO RISCO
+
+🔝 TOP 5 CLIENTES MAIS ARRISCADOS
+----------------------------------------
+    cliente_id  receita  risco  ... inadimplente  score  categoria_risco
+7            8   8000.0   alto  ...            1    100       ALTO RISCO
+13          14   9000.0   alto  ...            1    100       ALTO RISCO
+19          20   7000.0   alto  ...            1    100       ALTO RISCO
+9           10  12000.0  medio  ...            0     60      RISCO MÉDIO
+0            1  10000.0  baixo  ...            0     45      BAIXO RISCO
+
+[5 rows x 8 columns]
