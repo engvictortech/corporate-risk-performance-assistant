@@ -1,190 +1,160 @@
-# 📊 Análise e Previsão de Inadimplência
-Projeto de Data Science aplicado a Risco de Crédito em Fintech
-## 🎯 Visão Executiva
+# 🏢 Corporate Risk & Performance Assistant
 
-Este projeto simula um cenário real de uma fintech de crédito que precisa antecipar movimentos de deterioração da carteira.
+📊 Projeto de análise de risco e performance corporativa focado em inadimplência, receita e segmentação de clientes.
 
-O objetivo é transformar variáveis macroeconômicas em insights estratégicos acionáveis, permitindo decisões como:
+## 🔹 Visão Geral
 
-Ajuste de políticas de concessão
+Este projeto ajuda empresas a entender o risco de seus clientes e tomar decisões estratégicas com base em dados.
+Funcionalidades principais:
 
-Revisão de limites de crédito
+* 📥 Carregamento e tratamento de dados
 
-Reprecificação de taxas
+* 📊 Cálculo de KPIs e indicadores estratégicos
 
-Reforço de provisionamento (PDD)
+* 🚨 Score e classificação de risco de clientes
 
-A proposta vai além da análise técnica — o foco está em impacto direto no negócio.
+* 📈 Visualizações interativas
 
-## 🧠 Problema de Negócio
+* 💾 Exportação de relatórios
 
-Instituições financeiras operam sob risco constante de inadimplência.
+O dataset possui as seguintes colunas:
 
-Movimentos macroeconômicos, como aumento do desemprego ou da taxa de juros, impactam diretamente a qualidade da carteira.
+Coluna	                 Descrição
+cliente_id	            Identificador único do cliente
+receita	                Receita anual/mensal do cliente 💰
+risco	                Classificação de risco (baixo, médio, alto) ⚠️
+segmento	            Segmento do cliente (corporativo, PME, enterprise) 🏷️
+tempo_contrato_meses	  Duração do contrato em meses ⏳
+inadimplente	          Indicador de inadimplência (0 = não, 1 = sim) ❌
 
-Pergunta central:
+Exemplo de dados:
 
-É possível antecipar movimentos de alta na inadimplência utilizando variáveis macroeconômicas?
+cliente_id,receita,risco,segmento,tempo_contrato_meses,inadimplente
+1,10000,baixo,corporativo,24,0
+2,20000,medio,corporativo,36,0
+3,,alto,pm e,12,1
+...
+20,7000,alto,pm e,9,1
 
-📁 data/
- 
- ├── raw/
- 
- └── processed/
+## 🔹 Estrutura do Projeto
+project-root/
+│
+├── data/
 
+│   └── sample_data.csv           # 📄 Dados de clientes
 
-📁 notebooks/
- 
- ├── 01_coleta_dados.ipynb
+│
 
- ├── 02_tratamento_dados.ipynb
- 
- ├── 03_analise_exploratoria.ipynb
+├── src/
 
- ├── 04_modelagem_macro.ipynb
+│   ├── data_loader.py            # 🧹 Carregamento e limpeza de dados
 
+│   ├── performance_analyzer.py   # 📊 KPIs e insights estratégicos
 
-📁 models/
- 
- └── modelo_macro_pipeline.pkl
+│   ├── risk_scoring.py           # 🚨 Score e classificação de risco
 
+│   └── visualizer.py             # 📈 Visualizações (receita, score, etc.)
 
-📁 outputs/
- 
- ├── graficos/
- 
- └── metricas/
+│
 
-README.md
+├── main.py                       # ▶️ Script principal
 
-requirements.txt
+└── README.md
 
-# 🔎 Abordagem Analítica
+# 🔹 Funcionalidades
+## 1️⃣ Carregamento e Tratamento de Dados
 
-## 1️⃣ Coleta de Dados
+🔍 Validação da estrutura e consistência
 
-Taxa de inadimplência
+🧹 Tratamento de valores nulos
 
-Taxa de juros
+## 2️⃣ Análise de Performance
 
-Taxa de desemprego
+📊 KPIs executivos: receita total, média, inadimplência, tempo médio de contrato
 
-Estruturação em série temporal
+💹 Receita média por segmento
 
-## 2️⃣ Tratamento e Engenharia de Dados
+🧠 Insights estratégicos automáticos
 
-Padronização temporal
+3️⃣ Risk Scoring
 
-Tratamento de valores ausentes
+⚖️ Cálculo de score individual baseado em regras de negócio:
 
-Organização cronológica
+💰 Receita (quanto menor, maior o risco)
 
-Criação de variáveis defasadas (lags)
+⏳ Tempo de contrato (contratos curtos = mais risco)
 
-Aplicação de boas práticas para evitar vazamento de dados
+⚠️ Classificação declarada de risco
 
-## 3️⃣ Análise Exploratória (EDA)
+🚦 Classificação: ALTO RISCO, RISCO MÉDIO, BAIXO RISCO
 
-Principais análises realizadas:
+🔝 Top 5 clientes mais arriscados
 
-Evolução histórica da inadimplência
+4️⃣ Visualizações
 
-Correlação entre desemprego e inadimplência
+📊 Receita por segmento (gráfico de barras)
 
-Impacto da taxa de juros
+📉 Distribuição de score de risco (histograma com KDE)
 
-Identificação de tendências e ciclos econômicos
+5️⃣ Exportação
 
-📌 Insight Estratégico:
-O desemprego apresenta forte relação positiva com a inadimplência, enquanto juros indicam impacto com efeito defasado — reforçando a importância do monitoramento macroeconômico na gestão de risco.
+💾 Relatório final com score de risco:
 
-## 4️⃣ Modelagem Preditiva
+data/clientes_scored.csv
 
-Modelo econométrico baseado em Regressão Linear.
+🔹 Como Executar
 
-Boas práticas aplicadas:
+Instale dependências:
 
-Separação treino/teste cronológica (80/20)
+pip install pandas matplotlib seaborn
 
-Avaliação com MAE, RMSE e R²
 
-Análise de multicolinearidade (VIF)
+Execute o script principal:
 
-Inclusão de variáveis defasadas
+python main.py
 
-Comparação visual entre valores reais e previstos
 
-## 🎯 Objetivo: antecipar movimentos de deterioração da carteira.
+Confira os resultados:
 
-## ⚙️ Pipeline de Modelagem
+📈 KPIs e insights no console
 
-O modelo foi estruturado em formato de Pipeline do Scikit-Learn, permitindo:
+💾 Arquivo clientes_scored.csv em data/
 
-Reprodutibilidade
+📊 Gráficos interativos exibidos
 
-Organização do fluxo de pré-processamento + modelagem
+🔹 Insights Estratégicos Exemplo
 
-Facilidade de deploy
+⚠️ Taxa de inadimplência acima de 20%
 
-Exportação para ambiente produtivo
+📉 Segmento PME apresenta maior risco de inadimplência
 
-Arquivo salvo em:
-models/modelo_macro_pipeline.pkl
+💰 Receita média saudável acima de 20k
 
-## 📊 Resultados Relevantes
+🔹 Tecnologias
 
-✔ Captura consistente da tendência de crescimento da inadimplência
-✔ Evidência de poder explicativo das variáveis macroeconômicas
-✔ Aplicabilidade direta em contexto de fintech
+🐍 Python 3.10+
 
-O projeto demonstra como transformar variáveis econômicas em sinal preditivo para gestão de risco.
+📊 Pandas
 
-## 🛠 Stack Tecnológica
+📈 Matplotlib
 
-Python
+🎨 Seaborn
 
-Pandas
+🔹 Contribuição
 
-NumPy
+Projeto open-source para análise de risco corporativo.
+Você pode:
 
-Matplotlib
+🔄 Testar com outros datasets
 
-Scikit-Learn
+⚙️ Ajustar regras de scoring
 
-## 💼 Aplicação em Ambiente Real
+📊 Expandir KPIs e visualizações
 
-Em uma fintech ou banco digital, este modelo pode apoiar:
-
-Ajuste de score de crédito
-
-Segmentação por risco
-
-Revisão de política de concessão
-
-Definição de limites
-
-Estratégia de precificação
-
-## 🚀 Roadmap Técnico
-
-Implementação de modelo de classificação (inadimplente vs adimplente)
-
-Regressão Logística
-
-Random Forest
-
-Avaliação com ROC-AUC e Recall
-
-Backtesting temporal
-
-Construção de dashboard executivo
-
-## 👤 Autor
-
+🔹 Autor
 * Victor Hugo Miranda Crispim
 
 * Bacharel em Análise de Dados
 
 * Experiência em Crédito B2B e B2C
 
-* Foco em análise de risco e tomada de decisão baseada em dado
